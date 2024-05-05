@@ -1,0 +1,21 @@
+version: "3
+
+services:
+  minecraft:
+    image: itzg/minecraft-server
+    volumes:
+      - minecraftdata:/data
+      - /home/Minecraft/plugins:/plugins
+    ports:
+      - 25565:25565
+    enviornment:
+      EULA: "TRUE"
+      TYPE: ""
+      OPS: "notaporch"
+      ENABLE_WHITELIST: "TRUE"
+      ENFORCE_WHITELIST: "TRUE"
+    tty: true
+    stdin_open: true
+  volumes:
+    minectraftdata:
+      external: true
